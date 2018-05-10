@@ -27,3 +27,8 @@ function crawl() {
       }
 }
 
+function visitPage(url) {
+  // Add page to our set
+  pagesVisited[url] = true;
+  numPagesVisited++;
+}
