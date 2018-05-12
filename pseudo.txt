@@ -1,0 +1,17 @@
+psuedo
+- Load file and test script from command line 'npm start --test1' == (crawler.js && test1.json)
+- pass pages[0] from test file to crawl()
+- start on pages[0], pagesVisited array ++
+- if page is in 'pagesVisited' array, "skip it" and add it to duplicate array
+- else
+    - find 'links' on firstPage, collectLinks function push to nextPage array
+    - if link is in 'pagesVisited' array, "skip it" and add it to duplicate array
+    - if link has no page object, "skip it" & add it to invalid array
+    - Add links to nextPage array
+- go to next page(link)
+- find 'links' on this Page
+- Add links to nextPage array
+- Return:
+ 	"Success: " & The list of page addresses it crawled successfully (pagesVisited array)
+    "Skipped: " & The list of duplicate page addresses it skipped (duplicate array)
+    "error: "  & The list of invalid page addresses it skipped (invalid array)

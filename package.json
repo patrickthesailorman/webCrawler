@@ -3,11 +3,16 @@
   "version": "0.0.0",
   "description": "A simple webcrawler written in JavaScript",
   "main": "crawler.js",
-  "author": "Stephen",
+  "author": "Patrick",
   "license": "ISC",
+  "repository": "https://github.com/patrickthesailorman/webCrawler",
+  "scripts": {
+    "start": "node crawler.js"
+  },
   "dependencies": {
-    "cheerio": "^0.19.0",
-    "url-parse": "^1.0.5",
-    "request": "^2.65.0"
+    "cheerio": "^0.22.0",
+    "json": "^9.0.6",
+    "request": "^2.65.0",
+    "url-parse": "^1.0.5"
   }
 }
