@@ -48,12 +48,10 @@ function visitPage(url, callback) {
 }
 
 function collectLinks() {
-  debugger;
      for(var i = 0; i < obj.pages.length; i++) {
        for(var j = 0; j < obj.pages[i].links.length; j++) {
          var links = obj.pages[i].links;
          var link = obj.pages[i].links[j];
-         console.log(links);
           console.log(link);
          if(link in pagesVisited) {
            duplicate.push(link);
@@ -61,13 +59,10 @@ function collectLinks() {
            invalid.push(link);
          } else {
            pagesToVisit.push(link);
-           visitPage(link);
+          visitPage(link);
          }
        }
      }
-
-
-        // console.log(links);
 }
 console.log("Success: ", pagesVisited);
 console.log("Skipped: ", duplicate);
