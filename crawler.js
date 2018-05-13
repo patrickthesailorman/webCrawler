@@ -20,7 +20,9 @@ var url = new URL(START_URL);
 
 var duplicate = [];
 var invalid = [];
+
 console.log(obj.pages);
+
 pagesToVisit.push(START_URL);
 crawl();
 
@@ -32,6 +34,8 @@ function crawl() {
         // We've already visited this page, so push to duplicate array and repeat the crawl
         duplicate.push(nextPage);
         crawl();
+      } else if(!nextPage.hasOwnProperty("address")) {
+        invalid.push(nextPage);
       } else {
         // New page we haven't visited
         visitPage(nextPage, crawl);
@@ -48,21 +52,20 @@ function visitPage(url, callback) {
 }
 
 function collectLinks() {
-     for(var i = 0; i < obj.pages.length; i++) {
-       for(var j = 0; j < obj.pages[i].links.length; j++) {
-         var links = obj.pages[i].links;
-         var link = obj.pages[i].links[j];
-          console.log(link);
-         if(link in pagesVisited) {
-           duplicate.push(link);
-         } else if(link !== obj.pages[i].address) {
-           invalid.push(link);
-         } else {
-           pagesToVisit.push(link);
-          visitPage(link);
-         }
-       }
-     }
+         var links = obj.pages[0].links;
+         for(var link in links);
+         console.log(links);
+        //  console.log(link);
+        //  var link = obj.pages[0].links[0];
+        //   console.log(link);
+        //  if(link in pagesVisited) {
+        //   duplicate.push(link);
+        //  } else if(link !== obj.pages[0].address) {
+        //   invalid.push(link);
+        //  } else {
+           pagesToVisit.push(link[0]);
+           crawl();
+        //  }
 }
 console.log("Success: ", pagesVisited);
 console.log("Skipped: ", duplicate);
