@@ -48,6 +48,7 @@ function visitPage(url, callback) {
 }
 
 function collectLinks() {
+  debugger;
      for(var i = 0; i < obj.pages.length; i++) {
        for(var j = 0; j < obj.pages[i].links.length; j++) {
          var links = obj.pages[i].links;

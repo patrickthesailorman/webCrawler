@@ -12,6 +12,7 @@
   "dependencies": {
     "cheerio": "^0.22.0",
     "json": "^9.0.6",
+    "mocha": "^5.1.1",
     "request": "^2.65.0",
     "url-parse": "^1.0.5"
   }
