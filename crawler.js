@@ -10,8 +10,8 @@ var obj = require('./test1.json');
 // // var test = fs.readFileSync(process.argv[2]);
 // var jsonData = JSON.parse(test);
 
-
-var START_URL = obj.pages[0].address;
+var web = process.argv[2];
+var START_URL = web.pages[0].address;
 
 var pagesVisited = {}; // create a set
 var numPagesVisited = 0;
