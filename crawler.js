@@ -5,6 +5,12 @@ var json = require('json');
 
 var obj = require('./test1.json');
 
+// Start with web
+// Crawl to first page
+// Visit links found
+// If visited add to duplicate Array
+// If Invalid add to Invalid array
+
 // var fs = require("fs");
 // var test = fs.readFileSync('test1.json');
 // // var test = fs.readFileSync(process.argv[2]);
