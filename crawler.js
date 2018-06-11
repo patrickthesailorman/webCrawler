@@ -11,6 +11,12 @@ var obj = require('./test1.json');
 // If visited add to duplicate Array
 // If Invalid add to Invalid array
 
+let crawls = []
+let results = {
+    "success": [],
+    "skipped": [],
+    "error": []
+}
 // var fs = require("fs");
 // var test = fs.readFileSync('test1.json');
 // // var test = fs.readFileSync(process.argv[2]);
