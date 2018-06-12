@@ -1,18 +1,13 @@
-var request = require('request');
-var cheerio = require('cheerio');
-var URL = require('url-parse');
-var json = require('json');
-
-var obj = require('./test1.json');
-
+var web = process.argv[2];
+var START_URL = web.pages[0].address;
 // Start with web
 // Crawl to first page
 // Visit links found
 // If visited add to duplicate Array
 // If Invalid add to Invalid array
 
-let crawls = []
-let results = {
+var crawls = []
+var results = {
     "success": [],
     "skipped": [],
     "error": []
@@ -22,17 +17,14 @@ let results = {
 // // var test = fs.readFileSync(process.argv[2]);
 // var jsonData = JSON.parse(test);
 
-var web = process.argv[2];
-var START_URL = web.pages[0].address;
-
 var pagesVisited = {}; // create a set
 var numPagesVisited = 0;
 var pagesToVisit = [];
-var url = new URL(START_URL);
+// var url = new URL(START_URL);
 
 var duplicate = [];
 var invalid = [];
-console.log(obj.pages);
+// console.log(obj.pages);
 pagesToVisit.push(START_URL);
 crawl();
 
@@ -42,7 +34,7 @@ function crawl() {
 
       if (nextPage in pagesVisited) {
         // We've already visited this page, so push to duplicate array and repeat the crawl
-        duplicate.push(nextPage);
+        results.skipped.push(nextPage);
         crawl();
       } else {
         // New page we haven't visited
