@@ -52,14 +52,14 @@ function visitPage(url, callback) {
 }
 
 function collectLinks() {
-     for(var i = 0; i < obj.pages.length; i++) {
-       for(var j = 0; j < obj.pages[i].links.length; j++) {
-         var links = obj.pages[i].links;
-         var link = obj.pages[i].links[j];
+     for(var i = 0; i < web.pages.length; i++) {
+       for(var j = 0; j < web.pages[i].links.length; j++) {
+         var links = web.pages[i].links;
+         var link = web.pages[i].links[j];
           console.log(link);
          if(link in pagesVisited) {
            duplicate.push(link);
-         } else if(link !== obj.pages[i].address) {
+         } else if(link !== web.pages[i].address) {
            invalid.push(link);
          } else {
            pagesToVisit.push(link);
